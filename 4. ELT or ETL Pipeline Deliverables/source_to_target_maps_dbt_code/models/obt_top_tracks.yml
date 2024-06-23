@@ -1,0 +1,6 @@
+version: 2
+
+models:
+  - name: obt_top_tracks
+    description: Accumulating snapshot. One row per song played. Used to track the top songs played by users
+    

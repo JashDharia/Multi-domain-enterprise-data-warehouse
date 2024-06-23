@@ -1,0 +1,19 @@
+version: 2
+
+models:
+  - name: jobtitles_lookup
+    description: |
+      Model to load and transform job titles lookup data
+    columns:
+      - name: jobtitle_key
+        description: "Surrogate key for the job title"
+      - name: JOBTITLE_ID
+        description: "Identifier for the job title"
+        meta:
+          dbt_type: varchar(20)
+          not_null: true
+      - name: active_time
+        description: "Timestamp when the job title data was loaded"
+        meta:
+          dbt_type: timestamp
+    materialized: view

@@ -1,0 +1,37 @@
+version: 2
+
+models:
+  - name: fact_sales
+    description: Sales Fact. One row per book sale transaction
+    columns:
+      - name: sales_id
+        description: Source Key
+
+      - name: titlekey
+        description: Dimension Foreign Key for dim title
+
+      - name: publisherkey
+        description: Dimension Foreign Key for dim publisher
+
+      - name: authorkey
+        description: Dimension Foreign Key for dim author
+
+      - name: salesdatekey
+        description: Dimension Foreign Key for dim sales date
+
+      - name: quantity
+        description: Quantity of books
+
+      - name: sales_amount
+        description: Total Price
+        tests:
+          - not_null
+
+      - name: discount_amount
+        description: Discount on the sales
+
+      - name: sold_amount
+        description: Sold amount
+
+      - name: advance_amount
+        description: Advance amount

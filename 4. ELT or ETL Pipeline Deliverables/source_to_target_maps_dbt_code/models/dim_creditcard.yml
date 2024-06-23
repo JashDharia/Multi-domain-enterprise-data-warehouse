@@ -1,0 +1,27 @@
+version: 2
+
+models:
+  - name: creditcards
+    description: "Model to load data from staging table into the target CREDITCARDS table."
+    columns:
+      - name: creditcard_key
+        description: "Surrogate key for the credit card."
+        tests:
+          - unique
+      - name: creditcard_id
+        description: "Original ID of the credit card."
+        tests:
+          - unique
+      - name: creditcard_number
+        description: "Credit card number."
+      - name: creditcard_exp_date
+        description: "Credit card expiration date."
+      - name: active_time
+        description: "Timestamp when the record was loaded into the target table."
+    unique_key: creditcard_key
+    sources:
+      - name: visionmart
+        tables:
+          - name: creditcards
+    meta:
+      dbt_created_at: "2024-04-26T12:00:00Z"

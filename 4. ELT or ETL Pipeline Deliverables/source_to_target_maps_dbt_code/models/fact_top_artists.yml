@@ -1,0 +1,18 @@
+version: 2
+
+models:
+  - name: fact_top_artists
+    description: Accumulating snapshot. One row per artist. Used to track the most followerd and liked artist
+    columns:
+      - name: Artist_ID
+        description: Degenerate dimension for of the artist.
+        tests:
+            - not_null
+      - name: artistkey
+        description: Dimension key for dim_artist
+      - name: artistname
+        description: Name of the artist
+      - name: artist_rank
+        description: Rank of the Artist
+       
+      

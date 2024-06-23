@@ -1,0 +1,6 @@
+version: 2
+
+models:
+  - name: obt_top_artists
+    description: Accumulating snapshot. One row per artist played. Used to track the top artists
+    

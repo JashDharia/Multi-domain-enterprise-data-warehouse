@@ -1,0 +1,15 @@
+version: 2
+
+models:
+  - name: dim_plans
+    description: Customer Dimension. One row per plan
+    columns:
+      - name: plan_key
+        description: The surrogate key of the dim plan
+        tests:
+          - not_null
+          - unique
+      - name: plan_id
+        description: The plan's table surrogate key
+        tests:
+          - not_null

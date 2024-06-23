@@ -1,0 +1,19 @@
+version: 2
+
+models:
+  - name: dim_people
+    description: People Dimension. One row per people
+    columns:
+      - name: people_key
+        description: The surrogate key of the people
+        tests:
+          - not_null
+          - unique
+      - name: people_id
+        description: The people's table surrogate key
+        tests:
+          - not_null
+      - name: people_name
+        description: The business / source key of the customer
+        tests:
+          - not_null

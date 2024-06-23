@@ -1,0 +1,2 @@
+For the Naming Convention we have followed the standard Table_Name throughout the OLTP.
+For the dim and fact it is maintained as dim_tablename and fact_tablename throughout.

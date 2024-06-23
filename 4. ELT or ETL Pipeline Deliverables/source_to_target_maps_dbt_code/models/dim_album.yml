@@ -1,0 +1,16 @@
+version: 2
+
+models:
+  - name: dim_album
+    description: album Dimension. One row per album
+    columns:
+      - name: albumkey
+        description: The surrogate key of the album
+        tests:
+          - not_null
+          - unique
+      - name: album_id
+        description: The business / source key of the album
+        tests:
+          - not_null
+          - unique

@@ -1,0 +1,16 @@
+version: 2
+
+models:
+  - name: dim_track
+    description: Track Dimension. One row per track
+    columns:
+      - name: trackkey
+        description: The surrogate key of the track
+        tests:
+          - not_null
+          - unique
+      - name: track_id
+        description: The business / source key of the track
+        tests:
+          - not_null
+          - unique

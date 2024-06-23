@@ -1,0 +1,390 @@
+version: 2
+
+sources:
+  - name: visionflix
+    database: vision
+    schema: visionflix
+
+    tables:
+      - name: account_activity
+        columns:
+          - name: activity_id
+            tests:
+              - unique
+              - not_null
+      - name: account_billing
+        columns:
+          - name: ab_id
+            tests:
+              - unique
+              - not_null
+      - name: account_titles
+        columns:
+          - name: at_id
+            tests:
+              - unique
+              - not_null
+      - name: casting
+        columns:
+          - name: cast_people_id
+            tests:
+              - not_null
+          - name: cast_title_id
+            tests:
+              - not_null
+        tests:
+          - dbt_utils.unique_combination_of_columns:
+              combination_of_columns:
+                - cast_people_id
+                - cast_title_id
+      - name: directors
+        columns:
+          - name: director_people_id
+            tests:
+              - not_null
+          - name: director_title_id
+            tests:
+              - not_null
+        tests:
+          - dbt_utils.unique_combination_of_columns:
+              combination_of_columns:
+                - director_people_id
+                - director_title_id
+      - name: genres
+        columns:
+          - name: genre_name
+            tests:
+              - unique
+              - not_null
+      - name: people
+        columns:
+          - name: people_id
+            tests:
+              - unique
+              - not_null
+      - name: plans
+        columns:
+          - name: plan_id
+            tests:
+              - unique
+              - not_null
+      - name: title_genres
+        columns:
+          - name: tg_genre_name
+            tests:
+              - not_null
+          - name: tg_title_id
+            tests:
+              - not_null
+        tests:
+          - dbt_utils.unique_combination_of_columns:
+              combination_of_columns:
+                - tg_genre_name
+                - tg_title_id
+      - name: titles
+        columns:
+          - name: title_id
+            tests:
+              - unique
+              - not_null
+
+  - name: visionmusic
+    database: vision
+    schema: visionmusic
+
+    tables:
+      - name: Tracks
+        columns:
+          - name: track_id
+            tests:
+              - unique
+      - name: Artists
+        columns:
+          - name: artist_id
+            tests:
+              - unique
+      - name: Albums
+        columns:
+          - name: album_id
+            tests:
+              - unique
+      - name: Playlists
+        columns:
+          - name: playlist_id
+            tests:
+              - unique
+      - name: Membership
+        columns:
+          - name: membership_id
+            tests:
+              - unique
+      - name: Membership_Billing
+        columns:
+          - name: billing_id
+            tests:
+              - unique   
+      - name: Songs_Played
+        columns:
+          - name: track_id
+            tests:
+              - unique
+      - name: Playlist_Tracks
+        tests:
+          - dbt_utils.unique_combination_of_columns:
+              combination_of_columns:
+                - playlist_id
+                - track_id
+      - name: Likes
+        tests:
+          - dbt_utils.unique_combination_of_columns:
+              combination_of_columns:
+                - customer_id
+                - track_id
+      - name: Followers
+        tests:
+          - dbt_utils.unique_combination_of_columns:
+              combination_of_columns:
+                - customer_id
+                - artist_id
+
+  - name: visionmart
+    database: vision
+    schema: visionmart
+
+    tables:
+      - name: customers
+        columns:
+          - name: customer_id
+            tests:
+              - unique
+              - not_null
+          - name: customer_email
+            tests:
+              - unique
+              - not_null
+      - name: DateDimension
+        columns:
+          - name: DateKey
+            tests:
+              - not_null
+              - unique
+      - name: creditcards
+        columns:
+          - name: creditcard_id
+            tests:
+              - unique
+              - not_null
+          - name: creditcard_number
+              - not_null
+          - name: creditcard_exp_date
+              - not_null
+      - name: customer_creditcards
+        columns:
+          - name: customer_id
+              - not_null
+          - name: creditcard_id
+              - not_null
+      - name: customer_product_reviews
+        columns:
+          - name: customer_id
+              - not_null
+          - name: product_id
+              - not_null
+          - name: review_date
+              - not_null
+          - name: review_stars
+              - not_null
+          - name: review_id
+              - not_null
+
+        tests:
+          - dbt_utils.unique_combination_of_columns:
+              combination_of_columns:
+                - customer_id
+                - product_id
+      - name: departments_lookup
+        columns:
+          - name: department_id
+            tests:
+              - unique
+              - not_null
+      - name: employee_timesheets
+        columns:
+          - name: timesheet_id
+            tests:
+              - unique
+              - not_null
+          - name: timesheet_payrolldate
+              - not_null
+          - name: timesheet_hourlyrate
+              - not_null
+          - name: timesheet_employee_id
+              - not_null
+          - name: timesheet_hours
+              - not_null
+      - name: employees
+        columns:
+          - name: employee_id
+            tests:
+              - unique
+              - not_null
+          - name: employee_ssn
+            tests:
+              - unique
+              - not_null
+          - name: employee_lastname
+              - not_null
+          - name: employee_firstname
+              - not_null
+          - name: employee_jobtitle
+              - not_null
+          - name: employee_department
+              - not_null
+          - name: employee_birthdate
+              - not_null
+          - name: employee_hiredate
+              - not_null
+          - name: employee_hourlywage
+              - not_null
+          - name: employee_fulltime
+              - not_null
+      - name: jobtitles_lookup
+        columns:
+          - name: jobtitle_id
+            tests:
+              - unique
+              - not_null
+      - name: order_details
+        tests:
+          - dbt_utils.unique_combination_of_columns:
+              combination_of_columns:
+                - order_id
+                - product_id
+        columns:
+          - name: order_id
+              - not_null
+          - name: product_id
+              - not_null
+          - name: order_qty
+              - not_null
+      - name: orders
+        columns:
+          - name: order_id
+            tests:
+              - unique
+              - not_null
+          - name: customer_id
+              - not_null
+          - name: order_date
+              - not_null
+          - name: ship_via
+              - not_null
+          - name: creditcard_id
+              - not_null
+      - name: products
+        columns:
+          - name: product_id
+            tests:
+              - unique
+              - not_null
+          - name: product_department
+              - not_null
+          - name: product_name
+            tests:
+              - unique
+              - not_null
+          - name: product_retail_price
+              - not_null
+          - name: product_wholesale_price
+              - not_null
+          - name: product_is_active
+              - not_null
+          - name: product_add_date
+              - not_null
+          - name: product_vendor_id
+              - not_null
+      - name: shipvia_lookup
+        columns:
+          - name: ship_via
+            tests:
+              - unique
+              - not_null
+      - name: vendors
+        columns:
+          - name: vendor_id
+            tests:
+              - unique
+              - not_null
+          - name: vendor_name
+            tests:
+              - unique
+              - not_null
+          - name: vendor_phone
+              - not_null
+      - name: account_validity
+        columns:
+          - name: CUSTOMER_ID
+            tests:
+              - unique
+              - not_null
+          - name: ACCOUNT_CREATED_DATE
+            tests:
+              - not_null
+          - name: IS_ACTIVE
+            tests:
+              - not_null
+
+  - name: VISIONBOOKS
+    database: vision
+    schema: VISIONBOOKS
+
+    tables:
+      - name: AUTHORS
+        columns:
+          - name: au_id
+            tests:
+              - unique
+
+      - name: TITLES
+        columns:
+          - name: title_id
+            tests:
+              - unique
+
+      - name: SALES
+        columns:
+          - name: sales_id
+            tests:
+              - unique
+
+      - name: PUBLISHERS
+        columns:
+          - name: pub_id
+            tests:
+              - unique
+
+      - name: DISCOUNTS
+        columns:
+          - name: discount_id
+            tests:
+              - unique
+
+      - name: Reader
+        columns:
+          - name: reader_id
+            tests:
+              - unique
+
+      - name: ReaderSales
+        tests:
+          - dbt_utils.unique_combination_of_columns:
+              combination_of_columns:
+                - reader_id
+                - sales_id
+
+      - name: TITLEAUTHORS
+        tests:
+          - dbt_utils.unique_combination_of_columns:
+              combination_of_columns:
+                - title_id
+                - au_id

@@ -1,0 +1,30 @@
+version: 2
+
+models:
+  - name: fact_director_overall_analysis
+    description: Director Overall Analysis Fact. One row represents average rating for a director per movie
+    columns:
+      - name: director_key
+        description: The dim people table business key where is_director is "yes"
+        tests:
+          - not_null
+      - name: title_key
+        description: The dim titles table business key
+        tests:
+          - not_null
+      - name: genre_key
+        description: The dim genres table business key
+        tests:
+          - not_null
+      - name: release_year
+        description: The year movie was released
+        tests:
+          - not_null
+      - name: avg_popularity_rating
+        description: Average Popularity rating by customers
+        tests:
+          - not_null
+      - name: title_rating
+        description: Rating given by censor board
+        tests:
+          - not_null

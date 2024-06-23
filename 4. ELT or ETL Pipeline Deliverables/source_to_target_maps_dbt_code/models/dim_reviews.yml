@@ -1,0 +1,32 @@
+version: 2
+
+models:
+  - name: customer_product_reviews
+    description: |
+      Model to load and transform customer product reviews data
+    columns:
+      - name: review_key
+        description: "Surrogate key for the review (composite key of CUSTOMER_ID and PRODUCT_ID)"
+      - name: CUSTOMER_ID
+        description: "Customer ID associated with the review"
+      - name: PRODUCT_ID
+        description: "Product ID associated with the review"
+      - name: REVIEW_DATE
+        description: "Date of the review"
+        meta:
+          dbt_type: timestamp_ntz(9)
+          not_null: true
+      - name: REVIEW_STARS
+        description: "Rating stars given in the review"
+        meta:
+          dbt_type: number(38,0)
+          not_null: true
+      - name: REVIEW_ID
+        description: "Review ID"
+        meta:
+          dbt_type: number(38,0)
+      - name: active_time
+        description: "Timestamp when the review data was loaded"
+        meta:
+          dbt_type: timestamp
+    materialized: view

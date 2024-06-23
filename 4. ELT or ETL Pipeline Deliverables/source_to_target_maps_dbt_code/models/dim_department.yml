@@ -1,0 +1,19 @@
+version: 2
+
+models:
+  - name: departments_lookup
+    description: |
+      Model to load and transform department lookup data
+    columns:
+      - name: department_key
+        description: "Surrogate key for the department"
+      - name: DEPARTMENT_ID
+        description: "Identifier for the department"
+        meta:
+          dbt_type: varchar(20)
+          not_null: true
+      - name: active_time
+        description: "Timestamp when the department data was loaded"
+        meta:
+          dbt_type: timestamp
+    materialized: view

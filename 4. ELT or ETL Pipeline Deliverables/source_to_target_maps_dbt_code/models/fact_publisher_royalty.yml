@@ -1,0 +1,23 @@
+version: 2
+
+models:
+  - name: fact_publisher_royalties
+    description: Publisher Royalty Fact. One record represents a single royalty payment to a publisher
+    columns:
+      - name: royalty_id
+        description:  Source Key
+        tests:
+          - not_null
+          - unique
+      - name: publisherkey
+        description: Dimension Foreign Key for dim author
+        
+      - name: titlekey
+        description: Dimension Foreign Key for dim title
+        
+      - name: salesdatekey
+        description: Dimension Foreign Key for dim sales date
+        
+      - name: royaltyamount
+        description: Royalty amount paid to the publisher
+        

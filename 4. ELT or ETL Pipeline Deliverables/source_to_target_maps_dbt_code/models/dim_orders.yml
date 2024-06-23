@@ -1,0 +1,43 @@
+version: 2
+
+models:
+  - name: orders
+    description: |
+      Model to load and transform orders data
+    columns:
+      - name: order_key
+        description: "Surrogate key for the order"
+      - name: ORDER_ID
+        description: "Unique identifier for the order"
+        meta:
+          dbt_type: number(38,0)
+          not_null: true
+      - name: CUSTOMER_ID
+        description: "Customer ID associated with the order"
+        meta:
+          dbt_type: number(38,0)
+          not_null: true
+      - name: ORDER_DATE
+        description: "Date of the order"
+        meta:
+          dbt_type: timestamp_ntz(9)
+          not_null: true
+      - name: SHIPPED_DATE
+        description: "Date when the order was shipped"
+        meta:
+          dbt_type: timestamp_ntz(9)
+      - name: SHIP_VIA
+        description: "Shipping method used for the order"
+        meta:
+          dbt_type: varchar(20)
+          not_null: true
+      - name: CREDITCARD_ID
+        description: "Credit card ID used for payment"
+        meta:
+          dbt_type: number(38,0)
+          not_null: true
+      - name: active_time
+        description: "Timestamp when the order data was loaded"
+        meta:
+          dbt_type: timestamp
+    materialized: view

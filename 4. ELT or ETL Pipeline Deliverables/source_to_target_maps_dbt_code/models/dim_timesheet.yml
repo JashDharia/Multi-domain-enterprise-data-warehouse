@@ -1,0 +1,39 @@
+version: 2
+
+models:
+  - name: employee_timesheets
+    description: |
+      Model to load and transform employee timesheets data
+    columns:
+      - name: timesheet_key
+        description: "Surrogate key for the timesheet"
+      - name: TIMESHEET_ID
+        description: "Unique identifier for the timesheet"
+        meta:
+          dbt_type: number(38,0)
+          not_null: true
+      - name: TIMESHEET_PAYROLLDATE
+        description: "Date of the timesheet payroll"
+        meta:
+          dbt_type: timestamp_ntz(9)
+          not_null: true
+      - name: TIMESHEET_HOURLYRATE
+        description: "Hourly rate for the timesheet"
+        meta:
+          dbt_type: number(19,4)
+          not_null: true
+      - name: TIMESHEET_EMPLOYEE_ID
+        description: "Employee ID associated with the timesheet"
+        meta:
+          dbt_type: number(38,0)
+          not_null: true
+      - name: TIMESHEET_HOURS
+        description: "Number of hours worked in the timesheet"
+        meta:
+          dbt_type: number(3,1)
+          not_null: true
+      - name: active_time
+        description: "Timestamp when the timesheet data was loaded"
+        meta:
+          dbt_type: timestamp
+    materialized: view

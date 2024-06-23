@@ -1,0 +1,29 @@
+version: 2
+
+models:
+  - name: account_validity
+    description: |
+      Model to load and transform account validity data
+    columns:
+      - name: account_validity_key
+        description: "Surrogate key for the account validity"
+      - name: CUSTOMER_ID
+        description: "Customer ID associated with the account validity"
+        meta:
+          dbt_type: number(38,0)
+          not_null: true
+      - name: ACCOUNT_CREATED_DATE
+        description: "Date when the account was created"
+        meta:
+          dbt_type: timestamp_ntz(9)
+          not_null: true
+      - name: IS_ACTIVE
+        description: "Flag indicating if the account is active"
+        meta:
+          dbt_type: boolean
+          not_null: true
+      - name: active_time
+        description: "Timestamp when the account validity data was loaded"
+        meta:
+          dbt_type: timestamp
+    materialized: view

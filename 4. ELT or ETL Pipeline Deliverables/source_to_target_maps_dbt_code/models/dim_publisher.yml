@@ -1,0 +1,30 @@
+version: 2
+
+models:
+  - name: dim_publisher
+    description: Publisher Dimension. One row per publisher
+    columns:
+      - name: publisherkey
+        description: Dimension Key
+        tests:
+          - not_null
+          - unique
+      - name: pub_id
+        description: Primary key of source system
+        tests:
+          - not_null
+          
+      - name: publisher_name
+        description: Name of publisher
+        
+      - name: city
+        description: City of publisher
+        
+      - name: state
+        description: State of publisher
+        
+      - name: country
+        description: Country of publisher
+        
+      
+     

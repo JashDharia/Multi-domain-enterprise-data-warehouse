@@ -1,0 +1,19 @@
+version: 2
+
+models:
+  - name: shipvia_lookup
+    description: |
+      Model to load and transform ship via lookup data
+    columns:
+      - name: shipvia_key
+        description: "Surrogate key for the ship via"
+      - name: SHIP_VIA
+        description: "Shipping method"
+        meta:
+          dbt_type: varchar(20)
+          not_null: true
+      - name: active_time
+        description: "Timestamp when the ship via data was loaded"
+        meta:
+          dbt_type: timestamp
+    materialized: view

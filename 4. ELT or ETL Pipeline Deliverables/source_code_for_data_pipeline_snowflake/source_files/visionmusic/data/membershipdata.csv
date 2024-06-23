@@ -1,0 +1,6 @@
+﻿membership_id,membership_name,price,expiry_date
+1,Basic,10,6/30/2024
+2,Standard,20,9/30/2024
+3,Premium,30,12/31/2024
+4,Gold,40,3/31/2025
+5,Platinum,50,6/30/2025

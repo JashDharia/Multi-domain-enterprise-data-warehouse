@@ -1,0 +1,40 @@
+version: 2
+
+models:
+  - name: dim_title
+    description: Titles Dimension. One row per titles
+    columns:
+      - name: titlekey
+        description: Dimension Key
+        tests:
+          - not_null
+          - unique
+      - name: title_id
+        description: Primary key of source system
+        tests:
+          - not_null
+          - unique
+      - name: title
+        description: title of book
+        
+      - name: price
+        description: price of title
+        
+      - name: advance
+        description: advance given for the book title
+        
+      - name: royalty
+        description: royalty given for a book title
+        
+      
+      - name: ytd_sales
+        description: year to date sales
+      
+      - name: notes
+        description: description of the book
+
+      - name: pubdate
+        description: Publication date
+      
+      - name: pub_id
+        description: id of publisher

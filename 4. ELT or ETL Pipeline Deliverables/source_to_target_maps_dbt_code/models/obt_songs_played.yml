@@ -1,0 +1,6 @@
+version: 2
+
+models:
+  - name: obt_songs_played
+    description: Accumulating snapshot. One row per song played. Used to track the songs played by user
+    

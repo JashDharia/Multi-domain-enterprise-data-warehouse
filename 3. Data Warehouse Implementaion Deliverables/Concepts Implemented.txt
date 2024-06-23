@@ -1,0 +1,16 @@
+Tools:
+Snowflake
+GitHub
+dbt
+Power BI
+Excel Worksheets
+
+Techniques:
+Staging
+OBT
+enterprise Bus
+Star Schema
+OLTP
+OLAP
+ETL/ELT Pipelines
+Datawarehousing

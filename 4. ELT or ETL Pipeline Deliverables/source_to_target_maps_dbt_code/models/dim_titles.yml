@@ -1,0 +1,14 @@
+version: 2
+
+models:
+  - name: dim_titles
+    description: Titles Dimension. One row per title
+    columns:
+      - name: title_key
+        description: The surrogate key of the title
+        tests:
+          - not_null
+      - name: title_id
+        description: The title's table surrogate key
+        tests:
+          - not_null

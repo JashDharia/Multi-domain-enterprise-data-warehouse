@@ -1,0 +1,16 @@
+version: 2
+
+models:
+  - name: dim_artist
+    description: Artist Dimension. One row per artist
+    columns:
+      - name: artistkey
+        description: The surrogate key of the artist
+        tests:
+          - not_null
+          - unique
+      - name: artist_id
+        description: The business / source key of the artist
+        tests:
+          - not_null
+          - unique

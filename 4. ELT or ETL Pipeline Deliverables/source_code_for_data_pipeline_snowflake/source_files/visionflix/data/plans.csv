@@ -1,0 +1,6 @@
+﻿plan_id,plan_name,plan_price,plan_current,discount
+1,Basic,7.99,TRUE,0
+2,Standard,11.99,TRUE,0
+3,Premium,15.99,TRUE,0
+4,Family,17.99,TRUE,0
+5,Ultimate,19.99,TRUE,0

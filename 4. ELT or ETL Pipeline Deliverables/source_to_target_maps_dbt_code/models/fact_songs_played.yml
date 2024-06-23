@@ -1,0 +1,29 @@
+version: 2
+
+models:
+  - name: fact_songs_played
+    description: Accumulating snapshot. One row per song played. Used to track the songs played by user
+    columns:
+      - name: Track_ID
+        description: Degenerate dimension for of the track.
+        tests:
+            - not_null
+      - name: trackkey
+        description: Dimension key for dim_track
+      - name: artistkey
+        description: Dimension key for dim_artist
+      - name: Artist_ID
+        description: Degenerate dimension for of the Artist.
+        tests:
+            - not_null
+      - name: track_name
+        description: Name of the track
+      - name: track_duration
+        description: Duration of the track
+      - name: track_genre
+        description: Genre of the track
+      - name: artist_name
+        description: Name of artist
+      - name: date_time
+        description: Time at which song is played
+      

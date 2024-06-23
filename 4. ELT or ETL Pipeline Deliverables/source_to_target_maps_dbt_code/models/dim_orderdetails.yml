@@ -1,0 +1,29 @@
+version: 2
+
+models:
+  - name: order_details
+    description: |
+      Model to load and transform order details data
+    columns:
+      - name: order_detail_key
+        description: "Surrogate key for the order detail"
+      - name: ORDER_ID
+        description: "Order ID associated with the detail"
+        meta:
+          dbt_type: number(38,0)
+          not_null: true
+      - name: PRODUCT_ID
+        description: "Product ID associated with the detail"
+        meta:
+          dbt_type: number(38,0)
+          not_null: true
+      - name: ORDER_QTY
+        description: "Quantity of the product in the order"
+        meta:
+          dbt_type: number(38,0)
+          not_null: true
+      - name: active_time
+        description: "Timestamp when the order detail data was loaded"
+        meta:
+          dbt_type: timestamp
+    materialized: view

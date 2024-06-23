@@ -1,0 +1,44 @@
+version: 2
+
+models:
+  - name: dim_author
+    description: Authors Dimension. One row per author
+    columns:
+      - name: authorkey
+        description: Dimension Key
+        tests:
+          - not_null
+          - unique
+      - name: AU_ID
+        description: Primary key of source system
+        tests:
+          - not_null
+          - unique
+      - name: authornamelastfirst
+        description: Author name last, first
+        
+      - name: authornamefirstlast
+        description: Author name first, last
+        
+      - name: address
+        description: Address of author
+        
+      - name: phone
+        description: Phone number of author
+        
+      
+      - name: city
+        description: City of author
+      
+      - name: state
+        description: State of author
+
+      - name: zip
+        description: Zip code of author
+      
+      - name: contract
+        description: Contract between publisher and author
+        tests:
+          - not_null
+
+  

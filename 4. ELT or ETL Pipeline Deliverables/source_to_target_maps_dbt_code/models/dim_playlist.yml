@@ -1,0 +1,16 @@
+version: 2
+
+models:
+  - name: dim_playlist
+    description: playlist Dimension. One row per playlist
+    columns:
+      - name: playlistkey
+        description: The surrogate key of the playlist
+        tests:
+          - not_null
+          - unique
+      - name: playlist_id
+        description: The business / source key of the playlist
+        tests:
+          - not_null
+          - unique

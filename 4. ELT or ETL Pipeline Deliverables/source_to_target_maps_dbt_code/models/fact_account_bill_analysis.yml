@@ -1,0 +1,42 @@
+version: 2
+
+models:
+  - name: fact_account_bill_analysis
+    description: Account Bill Analysis Fact. One row represents monthly payment for one customer
+    columns:
+      - name: customer_key
+        description: The dim customer table business key
+        tests:
+          - not_null
+      - name: plan_key
+        description: The dim plan table business key
+        tests:
+          - not_null
+      - name: date_key
+        description: The dim date table business key
+        tests:
+          - not_null
+      - name: month
+        description: Month of the year
+        tests:
+          - not_null
+      - name: year
+        description: The year
+        tests:
+          - not_null
+      - name: amount
+        description: The amount for the plan person has purchased
+        tests:
+          - not_null
+      - name: discount
+        description: The discount provided by visionflix
+        tests:
+          - not_null
+      - name: total_discount
+        description: The total discount calculated from the percentage
+        tests:
+          - not_null
+      - name: total_amount
+        description: The total amount spend by the customer
+        tests:
+          - not_null

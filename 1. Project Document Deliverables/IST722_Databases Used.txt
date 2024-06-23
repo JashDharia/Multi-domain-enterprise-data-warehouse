@@ -1,0 +1,7 @@
+For this Project we have used the following:
+1. Fudgemart
+2. Fudgeflix
+3. Pubs
+4. Chinook
+
+We have utilized the basic structure of these and added upon further to fit our business objectives and created our own tables and generated our own data additional to the data present in these.

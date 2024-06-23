@@ -1,0 +1,30 @@
+version: 2
+
+models:
+  - name: vendors
+    description: |
+      Model to load and transform vendor data
+    columns:
+      - name: vendor_key
+        description: "Surrogate key for the vendor"
+      - name: VENDOR_ID
+        description: "Unique identifier for the vendor"
+      - name: VENDOR_NAME
+        description: "Name of the vendor"
+        meta:
+          dbt_type: varchar(50)
+          not_null: true
+      - name: VENDOR_PHONE
+        description: "Phone number of the vendor"
+        meta:
+          dbt_type: varchar(20)
+          not_null: true
+      - name: VENDOR_WEBSITE
+        description: "Website of the vendor"
+        meta:
+          dbt_type: varchar(1000)
+      - name: active_time
+        description: "Timestamp when the vendor data was loaded"
+        meta:
+          dbt_type: timestamp
+    materialized: view
