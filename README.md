@@ -1,10 +1,10 @@
 # Multi domain enterprise data warehouse Project 🚀📊
 
 ## Team Members 👥:
-- **Soundarya Ravi**
+- **Jash Nimesh Dharia Jaliwala**
 - **Advait Mahendra Narvekar**
 - **Ramya Chowdary Patchala**
-- **Jash Nimesh Dharia Jaliwala**
+
 
 ---
 
