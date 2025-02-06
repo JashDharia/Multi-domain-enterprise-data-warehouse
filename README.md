@@ -39,14 +39,17 @@ Using **Snowflake** and **DBT**, the team implemented robust **data processing**
 - Using **demand fact tables** for granular analysis and aggregation
 
 - Source
+
 <img width="754" alt="Screenshot 2025-02-05 at 10 58 03 PM" src="https://github.com/user-attachments/assets/68886ff7-c811-45d0-9457-2bc4b2b9d925" />
 
 - Transforming
 <img width="753" alt="Screenshot 2025-02-05 at 10 58 12 PM" src="https://github.com/user-attachments/assets/735329c2-55cf-44c1-b433-d9f8105c524d" />
+
 <img width="749" alt="Screenshot 2025-02-05 at 10 58 20 PM" src="https://github.com/user-attachments/assets/453673c6-2bb9-43ce-8c4b-4cb3c54f9c48" />
 
 - Staging
-  <img width="745" alt="Screenshot 2025-02-05 at 10 58 35 PM" src="https://github.com/user-attachments/assets/90539094-4d35-418b-a4ca-1f9c2aee0903" />
+
+<img width="745" alt="Screenshot 2025-02-05 at 10 58 35 PM" src="https://github.com/user-attachments/assets/90539094-4d35-418b-a4ca-1f9c2aee0903" />
 
 
 ### 3. Business Analytics and Visualization 📊
