@@ -1,4 +1,4 @@
-# Vision Framework Project 🚀📊
+# Multi domain enterprise data warehouse Project 🚀📊
 
 ## Team Members 👥:
 - **Soundarya Ravi**
@@ -85,9 +85,13 @@ These insights enabled stakeholders to make **data-driven decisions** and optimi
 - Analyzed **customer preferences** to tailor content offerings
 
 <img width="815" alt="Screenshot 2025-02-05 at 10 59 17 PM" src="https://github.com/user-attachments/assets/f691502f-b7e6-4546-b0ef-66f52fae03ad" />
+
 <img width="823" alt="Screenshot 2025-02-05 at 10 59 09 PM" src="https://github.com/user-attachments/assets/ea70bfe5-f70c-45bf-a1c5-75d734cefdad" />
+
 <img width="842" alt="Screenshot 2025-02-05 at 10 59 01 PM" src="https://github.com/user-attachments/assets/0d97718d-e748-4dba-a68f-e3259fa382ed" />
+
 <img width="847" alt="Screenshot 2025-02-05 at 10 58 52 PM" src="https://github.com/user-attachments/assets/d79a513b-bc30-485e-b467-bb9d0f613ba7" />
+
 <img width="811" alt="Screenshot 2025-02-05 at 10 58 44 PM" src="https://github.com/user-attachments/assets/1763df55-2fe3-48dd-ab7a-7cbd35f48ea9" />
 
 ---
